@@ -6,7 +6,7 @@ autoload -Uz colors
 colors
 
 # PROMPT:
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f %F{033}%n%f@%F{200}%M%f %B%F{033}%1~%f%b '
+PROMPT='%(?.%F{green}√.%F{red}?%?)%f %F{033}%n%f@%F{200}%M%f %(?:%F{green}➜%f :%F{red}➜%f)%B%F{033}%1~%f%b '
 PS1=$PROMPT
 setopt PROMPT_SUBST
 if [ -f $HOME/.zsh/git/git-prompt.sh ]
