@@ -6,7 +6,7 @@ autoload -Uz colors
 colors
 
 # PROMPT:
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f %F{033}%n%f@%F{200}%M%f %(?:%F{green}➜%f :%F{red}➜%f)%B%F{033}%1~%f%b '
+PROMPT='%(?.%F{green}√.%F{red}%?)%f %F{green}%n%f@%F{green}%M%f %(?:%F{green}➜%f :%F{red}➜%f )%B%F{033}%1~%f%b '
 PS1=$PROMPT
 setopt PROMPT_SUBST
 if [ -f $HOME/.zsh/git/git-prompt.sh ]
@@ -60,7 +60,11 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+zsh_syntax=/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f $zsh_syntax ]
+  then
+    source $zsh_syntax
+fi
 
 # ALIAS:
 alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
