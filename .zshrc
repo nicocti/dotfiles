@@ -1,5 +1,8 @@
 # ADD FUNCTIONS:
-# fpath=($HOME/.zsh $fpath)
+# Completions that are not yet in /usr/share/zsh/vendor-completions
+fpath+=$HOME/.zsh
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
 
 # COLORS:
 autoload -Uz colors
@@ -25,24 +28,14 @@ if [ -f $HOME/.zsh/git/git-prompt.sh ]
 fi
 
 # HISTORY:
-setopt hist_ignore_all_dups append_history hist_verify hist_reduce_blanks
+setopt hist_ignore_all_dups inc_append_history hist_verify hist_reduce_blanks share_history
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=4096
 SAVEHIST=4096
 
-# BASH COMPLETION:
-autoload -U bashcompinit
-bashcompinit
-zmodload -i zsh/complist
-
-# K8S COMPLETION:
-source <(kubectl completion zsh)
-alias k=kubectl
-complete -F __start_kubectl kc
-
 # ZSH OPTIONS:
 setopt correct correct_all hash_list_all list_ambiguous
-setopt complete_in_word completealiases
+setopt complete_in_word complete_aliases
 setopt auto_cd auto_remove_slash always_to_end
 setopt extended_glob glob_dots null_glob
 unsetopt beep hist_beep list_beep rm_star_silent hup
@@ -60,28 +53,19 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
+# requires sudo apt install zsh-syntax-highlighting:
 zsh_syntax=/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [ -f $zsh_syntax ]
   then
     source $zsh_syntax
 fi
 
+# requires sudo apt install zsh-autosuggestions:
 zsh_suggestions=/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 if [ -f $zsh_suggestions ]
   then
     source $zsh_suggestions
 fi
-
-# ALIAS:
-alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-alias ll='ls -lh'
-alias la='ls -a'
-alias lla='ls -la'
-alias less='less --quiet'
-alias df='df --human-readable'
-alias du='du --human-readable'
-alias grep='grep --color=auto'
-alias upgrade='sudo apt update && sudo apt upgrade && sudo apt clean'
 
 # PYTHON STUFF:
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -116,3 +100,15 @@ rmvenv() {
       rm -r $VENV_HOME/$1
   fi
 }
+
+# ALIAS:
+alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
+alias ll='ls -lh'
+alias la='ls -a'
+alias lla='ls -la'
+alias less='less --quiet'
+alias df='df --human-readable'
+alias du='du --human-readable'
+alias grep='grep --color=auto'
+alias upgrade='sudo apt update && sudo apt upgrade && sudo apt clean'
+alias kc='kubectl'

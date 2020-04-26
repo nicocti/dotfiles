@@ -1,6 +1,6 @@
-# from: https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
 #compdef git gitk
 
+# from: https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 # zsh completion wrapper for git
 #
 # Copyright (c) 2012-2013 Felipe Contreras <felipe.contreras@gmail.com>

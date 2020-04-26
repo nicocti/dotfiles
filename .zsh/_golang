@@ -1,5 +1,5 @@
-#from: https://github.com/zsh-users/zsh-completions/blob/master/src/_golang
 #compdef go
+# from: https://github.com/zsh-users/zsh-completions/blob/master/src/_golang
 # ------------------------------------------------------------------------------
 # Copyright (c) 2016 Github zsh-users - http://github.com/zsh-users
 # Copyright (c) 2013-2015 Robby Russell and contributors (see

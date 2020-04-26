@@ -18,7 +18,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export VENV_HOME="$HOME/.envs"
 export PIP_CONFIG_FILE="$HOME/.pypirc"
 
-export PATH=$HOME/go/bin:$HOME/.yarn/bin:$JAVA_HOME/bin:$PATH:~/.local/bin:$PYENV_ROOT/bin
+export PATH=$HOME/go/bin:$HOME/.cargo/bin:$HOME/.yarn/bin:$JAVA_HOME/bin:$PATH:~/.local/bin:$PYENV_ROOT/bin
 
 # SECRETS ARE HERE:
 source $HOME/.env
