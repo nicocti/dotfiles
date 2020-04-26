@@ -6,7 +6,7 @@ autoload -Uz colors
 colors
 
 # PROMPT:
-PROMPT='%(?.%F{green}√.%F{red}%?)%f %F{green}%n%f@%F{green}%M%f %(?:%F{green}➜%f :%F{red}➜%f )%B%F{033}%1~%f%b '
+PROMPT='%(?.%F{green}√.%F{red}%?)%f %F{green}%n%f@%F{green}%M%f %(?:%F{green}>%f :%F{red}>%f )%B%F{033}%1~%f%b '
 PS1=$PROMPT
 setopt PROMPT_SUBST
 if [ -f $HOME/.zsh/git/git-prompt.sh ]
@@ -25,7 +25,7 @@ if [ -f $HOME/.zsh/git/git-prompt.sh ]
 fi
 
 # HISTORY:
-setopt hist_ignore_all_dups append_history hist_verify hist_reduce_blanks hist_verify
+setopt hist_ignore_all_dups append_history hist_verify hist_reduce_blanks
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=4096
 SAVEHIST=4096
@@ -52,8 +52,8 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
-zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:*::::' completer _expand _complete _correct _ignored _approximate
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
@@ -64,6 +64,12 @@ zsh_syntax=/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [ -f $zsh_syntax ]
   then
     source $zsh_syntax
+fi
+
+zsh_suggestions=/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f $zsh_suggestions ]
+  then
+    source $zsh_suggestions
 fi
 
 # ALIAS:
