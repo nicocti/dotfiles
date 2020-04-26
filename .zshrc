@@ -45,6 +45,8 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-suffixes
+zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*::::' completer _expand _complete _correct _ignored _approximate
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:*:kill:*' menu yes select
@@ -106,6 +108,7 @@ alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars 
 alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ls -la'
+alias -s log="tail -f"
 alias less='less --quiet'
 alias df='df --human-readable'
 alias du='du --human-readable'

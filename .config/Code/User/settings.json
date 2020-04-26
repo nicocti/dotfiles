@@ -1,0 +1,89 @@
+{
+    // VS Code:
+    "editor.dragAndDrop": false,
+    "editor.mouseWheelZoom": true,
+    "editor.suggestSelection": "first",
+    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "editor.rulers": [
+        120
+    ],
+    "workbench.colorTheme": "Monokai Classic",
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "native",
+    "window.zoomLevel": 0,
+    "terminal.integrated.scrollback": 100000,
+    "liveshare.account": "nicocti",
+    "liveshare.accountProvider": "github",
+    "liveshare.publishWorkspaceInfo": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableCommitSigning": true,
+    // Python:
+    "python.venvFolders": [
+        ".envs",
+        ".pyenv",
+        ".direnv"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.yapfArgs": [
+        "--style",
+        "{based_on_style: facebook, indent_width: 4, column_limit: 120}"
+    ],
+    "python.formatting.blackArgs": [
+        "--line-length=100"
+    ],
+    // Language Server:
+    "python.jediEnabled": false,
+    // Linters:
+    "python.linting.enabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.linting.flake8Args": [
+        "--max-line-length=120"
+    ],
+    "python.linting.mypyEnabled": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.prospectorEnabled": false,
+    "python.linting.prospectorArgs": [
+        "--strictness",
+        "high",
+        "--max-line-length",
+        "120",
+        "--full-pep8",
+        "--pylint-disable",
+        "invalid-name"
+    ],
+    // Themes:
+    "workbench.colorCustomizations": {
+        "[Monokai]": {
+            // "editor.background": "#000000",
+            // "activityBar.background": "#000000"
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Monokai]": {
+            // "comments": "#229977"
+        }
+    },
+    // GO:
+    "go.lintTool": "golangci-lint",
+    "go.useLanguageServer": true,
+    "go.autocompleteUnimportedPackages": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        // Experimental settings
+        "watchFileChanges": true, // watch file changes outside of the editor
+        "deepCompletion": true, // enable deep completion
+    },
+    // RUST:
+    "rust.all_features": true
+}
