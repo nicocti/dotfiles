@@ -12,6 +12,7 @@
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
+    "files.eol": "\n",
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",
     "window.zoomLevel": 0,

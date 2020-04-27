@@ -4,6 +4,9 @@ fpath+=$HOME/.zsh
 autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit
 
+# ENFORCE DEFAULT USER RIGHTS:
+umask 022
+
 # COLORS:
 autoload -Uz colors
 colors
