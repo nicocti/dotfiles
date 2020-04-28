@@ -4,7 +4,77 @@
   suppress_multiple_term_dialog = True
   window_state = fullscreen
 [keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = True
+      last_active_term = 262a16fe-7fff-4149-97e0-036babca8129
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 1920, 1080
+      title = /usr/bin/zsh
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 958
+      ratio = 0.500261096606
+      type = HPaned
+    [[[child3]]]
+      order = 1
+      parent = child1
+      position = 490
+      ratio = 0.455813953488
+      type = VPaned
+    [[[child5]]]
+      order = 1
+      parent = child3
+      position = 332
+      ratio = 0.568493150685
+      type = VPaned
+    [[[terminal2]]]
+      command = /home/nicocti/go/bin/k9s
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 262a16fe-7fff-4149-97e0-036babca8129
+    [[[terminal4]]]
+      command = /home/nicocti/go/bin/lazydocker
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = d5da50e9-b6b5-434e-ae2d-9ffa50582bc6
+    [[[terminal6]]]
+      command = htop
+      order = 0
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = f5295cf9-9c07-49b6-b4da-8980027a149c
+    [[[terminal7]]]
+      command = nload
+      order = 1
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = 85d34c44-5f24-413b-857c-b5f4cb0d548c
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = JetBrains Mono 13
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
+    scrollback_lines = 50000
+    scrollbar_position = hidden
+    show_titlebar = False
+    visible_bell = True
 [profiles]
   [[default]]
     background_darkness = 0.9
