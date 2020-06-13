@@ -31,7 +31,8 @@ if [ -f $HOME/.zsh/git/git-prompt.sh ]
 fi
 
 # HISTORY:
-setopt hist_ignore_all_dups inc_append_history hist_verify hist_reduce_blanks share_history
+setopt hist_ignore_all_dups inc_append_history hist_verify hist_reduce_blanks hist_ignore_space
+unsetopt extended_history
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=4096
 SAVEHIST=4096
