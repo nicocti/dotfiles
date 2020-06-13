@@ -1,5 +1,7 @@
 {
     // VS Code:
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
     "editor.dragAndDrop": false,
     "editor.mouseWheelZoom": true,
     "editor.suggestSelection": "first",
